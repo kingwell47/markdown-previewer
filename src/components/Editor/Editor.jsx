@@ -52,15 +52,30 @@ And here. | Okay. | I think we get it.
 `;
   const [content, setContent] = useState(initial);
   const [click, setClick] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [maxed, setMaxed] = useState(false);
 
   const handleChange = (e) => {
     setContent(e.target.value);
   };
-  const handleClick = () => setClick(!click);
+  const handleClick = () => {
+    setClick(!click);
+    setMaxed(!maxed);
+  };
+  const toggleHide = () => setHidden(!hidden);
+
+  const styles = {
+    default: "editor",
+    hidden: "editor hide",
+    maxed: "editor maxed",
+  };
 
   return (
     <main>
-      <section className='editor'>
+      <section
+        className={
+          hidden ? styles.hidden : maxed ? styles.maxed : styles.default
+        }>
         <label className='editor__title' htmlFor='editor'>
           Editor
           <i
@@ -77,7 +92,9 @@ And here. | Okay. | I think we get it.
           </textarea>
         </form>
       </section>
-      <Previewer convert={content} />
+      {!maxed && (
+        <Previewer convert={content} handler={toggleHide} clickValue={click} />
+      )}
     </main>
   );
 }

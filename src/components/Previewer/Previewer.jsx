@@ -5,15 +5,20 @@ import "./Previewer.scss";
 
 function Previewer(props) {
   const [click, setClick] = useState(false);
+  const [maxed, setMaxed] = useState(false);
 
-  const handleClick = () => setClick(!click);
+  const handleClick = () => {
+    setClick(!click);
+    props.handler();
+    setMaxed(!maxed);
+  };
 
   marked.setOptions({
     gfm: true,
     breaks: true,
   });
   return (
-    <section className='previewer'>
+    <section className={maxed ? "previewer maxed" : "previewer"}>
       <label className='previewer__title'>
         Preview
         <i
