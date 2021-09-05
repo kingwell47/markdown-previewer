@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import Previewer from '../Previewer/Previewer'
-import './Editor.scss'
+import React, { useState } from "react";
+import Previewer from "../Previewer/Previewer";
+import "./Editor.scss";
 
 function Editor() {
-    let initial = `    
+  let initial = `    
 # Welcome to my React Markdown Previewer!
 
 ## This is a sub-heading...
@@ -50,24 +50,36 @@ And here. | Okay. | I think we get it.
 
 
 `;
-    const [content, setContent] = useState(initial);
+  const [content, setContent] = useState(initial);
+  const [click, setClick] = useState(false);
 
-    const handleChange = (e) => {
-        setContent(e.target.value);
-    }
-    return (
-        <main>
-        <section className="editor">
-            <label className="editor__title" htmlFor="editor">Editor</label>
-            <form id="editor-text-area" className="editor__text">
-                <textarea type="text" id="editor" className="editor__area" onInput={handleChange}>
-                    {content}
-                </textarea>
-            </form>
-        </section>
-        <Previewer convert={content}/>
-        </main>
-    )
+  const handleChange = (e) => {
+    setContent(e.target.value);
+  };
+  const handleClick = () => setClick(!click);
+
+  return (
+    <main>
+      <section className='editor'>
+        <label className='editor__title' htmlFor='editor'>
+          Editor
+          <i
+            onClick={handleClick}
+            className={click ? "fas fa-compress-alt" : "fas fa-expand-alt"}></i>
+        </label>
+        <form id='editor-text-area' className='editor__text'>
+          <textarea
+            type='text'
+            id='editor'
+            className='editor__area'
+            onInput={handleChange}>
+            {content}
+          </textarea>
+        </form>
+      </section>
+      <Previewer convert={content} />
+    </main>
+  );
 }
 
-export default Editor
+export default Editor;

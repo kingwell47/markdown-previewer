@@ -1,3 +1,13 @@
+:root {
+  --darkSienna: hsl(351, 58%, 9%);
+  --rubyRed: hsl(350, 96%, 33%);
+  --roseEbony: hsl(350, 15%, 38%);
+  --lavenderBlush: hsl(349, 46%, 93%);
+  --ultraRed: hsl(349, 71%, 69%);
+
+  --font: "Rajdhani", sans-serif;
+}
+
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -12,4 +22,6 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--darkSienna);
+  font-family: var(--font);
 }
