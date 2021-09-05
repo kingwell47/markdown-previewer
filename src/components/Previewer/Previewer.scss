@@ -1,0 +1,11 @@
+@use "../functions" as fnc;
+
+.previewer {
+  max-width: fnc.rem(800);
+  border: 3px solid red;
+  margin: 0 auto;
+
+  * {
+    max-width: 100%;
+  }
+}
