@@ -17,6 +17,15 @@
     padding: 0 0.5rem;
     border: 2px solid var(--ultraRed);
     color: var(--lavenderBlush);
+
+    i {
+      cursor: pointer;
+      transition: color 350ms ease-in-out;
+
+      &:hover {
+        color: yellow;
+      }
+    }
   }
 
   &__area {

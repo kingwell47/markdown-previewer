@@ -3,7 +3,7 @@ import Previewer from "../Previewer/Previewer";
 import "./Editor.scss";
 
 function Editor() {
-  let initial = `    
+  const initial = `    
 # Welcome to my React Markdown Previewer!
 
 ## This is a sub-heading...
