@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Markdown Previewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## FreeCodeCamp.org - Front End Development Libraries Project
 
-## Available Scripts
+This is a solution to the [Build a Markdown Previewer project](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer).
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Overview
 
-### `npm test`
+### Screenshot
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![](./Screenshot.png)
 
-### `npm run build`
+### Links
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Live Site URL: https://kingwell47.github.io/markdown-previewer/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## My process
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Built with
 
-### `npm run eject`
+- Semantic HTML
+- React.js
+- Scss
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### What I learned
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I learned that I should read documentation better, instead of trying and searching for a lot of different solutions:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```js
+marked.setOptions({
+  gfm: true,
+  breaks: true,
+});
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Conditional rendering is pretty good:
 
-## Learn More
+```js
+{
+  !maxed && (
+    <Previewer convert={content} handler={toggleHide} clickValue={click} />
+  );
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Continued development
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+It probably should have better animations for maximizing, but I'm not sure how to implement that.
 
-### Code Splitting
+Seems like it needs an aditional react specific way as I'm not sure how CSS handles conditional rendering.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Useful resources
 
-### Analyzing the Bundle Size
+- [Markdown Previewer Example](https://codepen.io/freeCodeCamp/full/GrZVVO) - Example from the project page. I mostly just reverse-engineered how it was done and had my own solutions to problems I encountered.
+- [Understanding Markdown](https://forum.freecodecamp.org/t/understanding-markdown/271965/3)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Author
 
-### Making a Progressive Web App
+- Website - [Joel P. Doctor](https://www.kingwell47.com) - Currently made using SquareSpace, I will migrate it once I make my own site.
+- Frontend Mentor - [@kingwell47](https://www.frontendmentor.io/profile/kingwell47)
+- Twitter - [@kingwell47](https://www.twitter.com/kingwell47)
+- LinkedIn - [Joel P. Doctor](https://www.linkedin.com/in/joel-d-05854919/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Acknowledgments
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thanks to Ms. Jessica Chan (Coder Coder) and all the other YouTube creators making their knowledge available!
